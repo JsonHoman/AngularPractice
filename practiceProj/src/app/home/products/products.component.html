@@ -1,10 +1,8 @@
-<div *ngFor="let product of products">
-    <a href="https://localhost:4200/products/:{{ product[0] }}">
-        <img src="{{ product[1] }}" alt="" height="100px" width="100px">
-        <div>{{ product[2] }}</div>
-        <div>{{ product[3] }}</div>
-        <div>{{ product[4] }}</div>
+<div *ngFor="let product of products; index as productId">
+    <a [title]="product.title" [routerLink]="['/product', productId]">
+        <img src="{{ product.image }}" alt="" height="100px" width="100px">
+        <h3>{{ product.title }}</h3>
+        <div *ngIf="product.info">{{ product.info }}</div>
+        <div>{{ product.price }}</div>
     </a>
 </div>
-
-

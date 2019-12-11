@@ -1,0 +1,5 @@
+https://angular.io/start/data
+-- Retrieve shipping prices --
+
+https://stackblitz.com/angular/onpdpglxgmy
+-- stackblitz code examples --

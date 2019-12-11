@@ -1,1 +1,10 @@
-<p>cart works!</p>
+<h3>Cart</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span>remove</span>
+    <span><img src="{{ item.image }}"></span>
+    <span>{{ item.title }}</span>
+    <!-- <span>{{ item.quantity }}</span> -->
+    <span>{{ item.price }}</span>
+</div>
+<!-- image title -size- quantity price -->
