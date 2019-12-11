@@ -1,0 +1,10 @@
+<div *ngFor="let product of products">
+    <a href="https://localhost:4200/products/:{{ product[0] }}">
+        <img src="{{ product[1] }}" alt="" height="100px" width="100px">
+        <div>{{ product[2] }}</div>
+        <div>{{ product[3] }}</div>
+        <div>{{ product[4] }}</div>
+    </a>
+</div>
+
+
