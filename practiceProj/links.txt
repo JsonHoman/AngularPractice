@@ -1,5 +1,5 @@
-https://angular.io/start/data
--- Retrieve shipping prices --
+https://angular.io/start/forms
+-- Create the checkout form --
 
 https://stackblitz.com/angular/onpdpglxgmy
 -- stackblitz code examples --
