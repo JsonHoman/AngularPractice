@@ -1,17 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './home/products/products.component';
-import { DetailComponent } from './home/products/detail/detail.component';
+import { ProductsComponent } from './products/products.component';
+import { DetailComponent } from './detail/detail.component';
 import { AdminComponent } from './admin/admin.component';
-import { CartComponent } from './navigation/cart/cart.component';
-import { MenuComponent } from './navigation/menu/menu.component';
+import { CartComponent } from './cart/cart.component';
+import { MenuComponent } from './menu/menu.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { ShippingComponent } from './shipping/shipping.component';
     AdminComponent,
     CartComponent,
     MenuComponent,
-    ShippingComponent
+    ShippingComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

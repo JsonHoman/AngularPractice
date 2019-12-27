@@ -1,0 +1,27 @@
+<h3>Shopping Cart</h3>
+<div>Price</div>
+<!-- <p>
+    <a routerLink="/shipping">Shipping Prices</a>
+</p> -->
+
+<hr>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span><button (click)=removeFromCart(item) type="button">Remove</button></span>
+    <span><img src="{{ item.image }}"></span>
+    <span>{{ item.title }}</span>
+    <!-- <span>{{ item.quantity }}</span> -->
+    <span>{{ item.price }}</span>
+    <label>Qty:</label>
+    <!-- <div>
+        <select> Qty:
+            <option *ngFor="let size of product.size" value="{{ size }}">{{ size }}</option>
+        </select>
+    </div> -->
+    <hr>
+</div>
+<!-- image title -size- quantity price -->
+
+<p>
+    <a routerLink="/checkout">Checkout</a>
+</p>

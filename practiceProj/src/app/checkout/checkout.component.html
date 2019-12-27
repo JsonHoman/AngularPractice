@@ -1,0 +1,56 @@
+<h3>Checkout (3 items)</h3>
+
+<p>
+    <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency }}</span>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+        <label for="fullName">Full name: </label>
+        <input id="fullName" type="text" formControlName="fullName">
+    </div>
+
+    <div>
+        <label for="streetAddress">Street address: </label>
+        <input id="streetAddress" type="text" formControlName="streetAddress">
+    </div>
+
+    <div>
+        <label for="city">City: </label>
+        <input id="city" type="text" formControlName="city">
+    </div>
+
+    <div>
+        <label for="State">State: </label>
+        <input id="State" type="text" formControlName="state">
+    </div>
+
+    <div>
+        <label for="zipCode">Zip code: </label>
+        <input id="zipCode" type="text" formControlName="zipCode">
+    </div>
+
+    <div>
+        <label for="country">Country: </label>
+        <input id="country" type="text" formControlName="country">
+    </div>
+
+    <div>
+        <label for="phoneNumber">Phone number: </label>
+        <input id="phoneNumber" type="text" formControlName="phoneNumber">
+    </div>
+
+    <div>
+        <label for="email">Email: </label>
+        <input id="email" type="text" formControlName="email">
+    </div>
+
+    <button class="button" type="submit">Review and Pay</button>
+
+</form>
