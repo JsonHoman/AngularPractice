@@ -1,8 +1,34 @@
-<div *ngFor="let product of products; index as productId">
+<div *ngFor="let product of products2; index as productId">
     <a [title]="product.title" [routerLink]="['/product', productId]">
-        <img src="{{ product.image }}" alt="" height="100px" width="100px">
+        <img src="{{ product.imageURL }}" alt="" height="100px" width="100px">
         <h3>{{ product.title }}</h3>
         <div *ngIf="product.info">{{ product.info }}</div>
         <div>{{ product.price }}</div>
     </a>
 </div>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Image</th>
+            <th scope="col">Info</th>
+            <th scope="col">Price</th>
+            <th scope="col">Sizes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products2">
+            <td>{{ product.productId }}</td>  
+            <td>{{ product.title }}</td>
+            <td>{{ product.imageURL }}</td>
+            <td>{{ product.info }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.sizes }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
