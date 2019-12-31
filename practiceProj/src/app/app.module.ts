@@ -14,6 +14,9 @@ import { CartComponent } from './cart/cart.component';
 import { MenuComponent } from './menu/menu.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { DetailAdminComponent } from './detail-admin/detail-admin.component';
+import { DetailUpdateAdminComponent } from './detail-update-admin/detail-update-admin.component';
+import { AddProductAdminComponent } from './add-product-admin/add-product-admin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CartComponent,
     MenuComponent,
     ShippingComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    DetailAdminComponent,
+    DetailUpdateAdminComponent,
+    AddProductAdminComponent
   ],
   imports: [
     BrowserModule,

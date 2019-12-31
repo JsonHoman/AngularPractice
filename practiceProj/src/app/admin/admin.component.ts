@@ -11,9 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  // items;
-  // addProductForm;
-
+  
+  products: Product[];
   product: Product;
 
   constructor(
@@ -55,6 +54,24 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.productService.getAllProducts().subscribe(
+      (data: Product[]) => this.products = data,
+      (err: any) => console.log(err),
+      () => console.log('All done getting products.')
+    );
+    let productId: number = parseInt(this.route.snapshot.params['id']);
+    this.productService.getProductById(productId).subscribe(
+      (data: Product) => this.product = data,
+      (err: any) => console.log(err),
+      () => console.log('All done getting product.')
+    )
   }
-
 }
+
+  
+
+  
+
+
+
+

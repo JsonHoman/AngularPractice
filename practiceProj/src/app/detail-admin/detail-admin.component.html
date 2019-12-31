@@ -1,0 +1,15 @@
+<div *ngIf="product">
+    <img id="product-img" src="{{ product.image }}" alt="" height="100px" width="100px">
+    <h1 id="title">{{ product.title }}</h1>
+    <p id="info">{{ product.info }}</p>
+    <button type="button">Info</button>
+    <div>
+        <select>
+            <option *ngFor="let size of product.size" value="{{ size }}">{{ size }}</option>
+        </select>
+    </div>
+    <div id="price">{{ product.price }}</div>
+    <!-- <button [routerLink]="['/productUpdateAdmin', productId]" type="button">Edit</button> -->
+    <button (click)="removeProduct(product)" type="button">Remove</button>
+</div>
+<a [routerLink]="['/productUpdateAdmin', productId]">Edit</a>
