@@ -13,13 +13,19 @@ export class DetailUpdateAdminComponent implements OnInit {
 
   product: Product;
 
+  productId: number;
+
   constructor(private productService: ProductService,
               private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    let productId: number = parseInt(this.route.snapshot.params['id']);
-    this.productService.getProductById(productId).subscribe(
+    
+    this.route.paramMap.subscribe(params => {
+      this.productId = +params.get('productId');
+    });
+
+    this.productService.getProductById(this.productId).subscribe(
       (data: Product) => this.product = data,
       (err: any) => console.log(err),
       () => console.log('All done getting product.')

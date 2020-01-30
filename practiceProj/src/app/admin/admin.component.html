@@ -1,11 +1,11 @@
 <div>
     <a routerLink="/productAddAdmin">Add Product</a>
 </div>
-<div *ngFor="let product of products; index as productId">
-    <a [title]="product.title" [routerLink]="['/productAdmin', productId]">
-        <img src="{{ product.imageURL }}" alt="" height="100px" width="100px">
+<div *ngFor="let product of products">
+    <a [title]="product.title" routerLink="/productAdmin/{{product.productId}}">
+        <img src="{{ product.imageUrl }}" alt="" height="100px" width="100px">
         <h3>{{ product.title }}</h3>
         <div *ngIf="product.info">{{ product.info }}</div>
-        <div>{{ product.price }}</div>
+        <div>{{ product.price | currency }}</div>
     </a>
 </div>

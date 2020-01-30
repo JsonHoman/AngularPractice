@@ -17,29 +17,12 @@ export class ProductsComponent implements OnInit {
               private productService: ProductService) { }
 
   ngOnInit() {
+    
     this.productService.getAllProducts().subscribe(
       (data: Product[]) => this.products = data,
-      (err: any) => console.log(err),
+      (err: any) => console.log("error: ", err),
       () => console.log('All done getting products.')
     );
-    let bookId: number = parseInt(this.route.snapshot.params['id']);
-    this.productService.getProductById(bookId).subscribe(
-      (data: Product) => this.product = data,
-      (err: any) => console.log(err),
-      () => console.log('All done getting product.')
-    )
   }
-
-  // onCreateProduct() {
-
-  // }
-
-  // onUpdateProduct() {
-
-  // }
-
-  // onDeleteProduct() {
-    
-  // }
 
 }

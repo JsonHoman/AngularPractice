@@ -1,32 +1,42 @@
-<p>add-product-admin works!</p>
+<div class="container">
+    <h3 class="col-md-6">Add Product Form</h3>
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+        
+        <div class="form-group col-md-6">
+            <label for="image">Image: </label>
+            <input id="image" class="form-control" type="text" ngModel name="imageUrl" placeholder="image url" required #imageUrl="ngModel">
+            <span class="help-block" *ngIf="!imageUrl.valid && imageUrl.touched">Please enter a valid input!</span>
+        </div>
 
-<!-- <form [formGroup]="addProductForm" (ngSubmit)="onSubmit(addProductForm.value)">
+        <div class="form-group col-md-6">
+            <label for="title">Title: </label>
+            <input id="title" class="form-control" type="text" ngModel name="title" placeholder="title" required #title="ngModel">
+            <span class="help-block" *ngIf="!title.valid && title.touched">Please enter a valid input!</span>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="info">Info: </label>
+            <input id="info" class="form-control" type="text" ngModel name="info" placeholder="info">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="sizes">Sizes: </label>
+            <input id="sizes" class="form-control" type="text" ngModel name="sizes" placeholder="sizes csv" required #sizes="ngModel">
+            <span class="help-block" *ngIf="!sizes.valid && sizes.touched">Please enter a valid input!</span>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="price">Price: </label>
+            <input id="price" class="form-control" type="number" ngModel name="price" placeholder="price" required #price="ngModel">
+            <span class="help-block" *ngIf="!price.valid && price.touched">Please enter a valid input!</span>
+        </div>
+
+        <button [disabled]="!productForm.valid" class="btn btn-primary button" type="submit">Add Product</button>
+
+    </form>
+
+    <div *ngIf="submitted">
+        <h5>Product has been added!</h5>
+    </div>
     
-    <div class="form-group col-md-6">
-        <label for="image">Image: </label>
-        <input id="image" class="form-control" type="text" formControlName="image" placeholder="image url">
-    </div>
-
-    <div class="form-group col-md-6">
-        <label for="title">Title: </label>
-        <input id="title" class="form-control" type="text" formControlName="title" placeholder="title">
-    </div>
-
-    <div class="form-group col-md-6">
-        <label for="info">Info: </label>
-        <input id="info" class="form-control" type="text" formControlName="info" placeholder="info">
-    </div>
-
-    <div class="form-group col-md-6">
-        <label for="sizes">Sizes: </label>
-        <input id="sizes" class="form-control" type="text" formControlName="sizes" placeholder="sizes">
-    </div>
-
-    <div class="form-group col-md-6">
-        <label for="price">Price: </label>
-        <input id="price" class="form-control" type="text" formControlName="price" placeholder="prices">
-    </div>
-
-    <button class="btn btn-primary button" type="submit">Add Product</button>
-
-</form> -->
+</div>

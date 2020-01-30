@@ -11,21 +11,28 @@ export class ProductService {
 
   private productsUrl: string;
 
+  constructor(private http: HttpClient) {
+    this.productsUrl = 'http://localhost:8080/product';
+  }
+
   getAllProducts(): Observable<Product[]> {
-    console.log('Getting all books from the server.');
+    console.log('Getting all products from the server.');
     return this.http.get<Product[]>(this.productsUrl);
   }
 
-  getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(this.productsUrl + '/id', {
-      headers: new HttpHeaders({
-      'Accept': 'application/json',
-      'Authorization': 'my-token'
-      })
-    });
+  getProductById(id): Observable<Product> {
+
+    console.log("get product by id url", this.productsUrl + `/${id}`);
+    // return this.http.get<Product>(this.productsUrl + `/${id}`, {
+    //   headers: new HttpHeaders({
+    //   'Accept': 'application/json'
+    //   // 'Authorization': 'my-token'
+    //   })
+    // });
+    return this.http.get<Product>(this.productsUrl + `/${id}`);
   }
 
-  constructor(private http: HttpClient) {
-    this.productsUrl = 'http://localhost:8080/product';
+  addProduct(product): Observable<any> {
+    return this.http.post(this.productsUrl, product);
   }
 }
